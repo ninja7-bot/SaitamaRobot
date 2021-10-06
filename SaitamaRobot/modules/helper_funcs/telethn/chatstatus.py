@@ -72,6 +72,11 @@ async def can_ban_users(message):
         status = message.chat.admin_rights.ban_users
     return status
 
+async def can_promote_members(message):
+    status = False
+    if message.chat.admin_rights:
+        status = message.chat.admin_rights.can_promote_members
+    return status
 
 async def can_pin_messages(message):
     status = False
@@ -103,3 +108,11 @@ async def can_delete_messages(message):
         return status
     else:
         return False
+    
+    
+async def can_manage_vc(message):
+    status = False
+    
+    if messagge.chat.admin_rights:
+        status = message.chat.admin_rights.can_manage_voice_chats
+    return status
