@@ -13,6 +13,7 @@ from SaitamaRobot.modules.helper_funcs.chat_status import (
     can_promote,
     connection_status,
     user_admin,
+    can_manage_vc,
     ADMIN_CACHE,
 )
 
