@@ -52,14 +52,12 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Watashi wa {}, Dattebayo {}.
-
-I'm here to help you keep your group safe, try out my health section.
+Oh hey hey, {}-kun, I am Miku Nakano, one of Futaro simps, ah no what I meant was, I am one of Nakano sisters at your service to assist you in your group.
+MUST CLICK /help.
 """
 
 HELP_STRINGS = """
-Naruto at your service {}-kun.
-I can help you with following functions in managing group.
+Miku Nakano at your service, {}.
 
 *Main* commands available:
  • /help: PM's you this message.
@@ -76,8 +74,7 @@ And the following:
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-SAITAMA_IMG = "https://wallpapercave.com/wp/valtU3c.jpg"
-#//wallpapercave.com/wp/wp4124908.png"
+MIKU_IMG = "https://images4.alphacoders.com/102/1026046.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
 You can donate to the original writer of the Base code, Paul
@@ -190,7 +187,7 @@ def start(update: Update, context: CallbackContext):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_photo(
-                SAITAMA_IMG,
+                MIKU_IMG,
                 PM_START_TEXT.format(
                     escape_markdown(first_name),
                     escape_markdown(context.bot.first_name)),
@@ -199,7 +196,7 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="☑️ Add Naruto to your group",
+                            text="☑️ Add Miku to your group",
                             url="t.me/{}?startgroup=true".format(
                                 context.bot.username))
                     ],
@@ -216,12 +213,12 @@ def start(update: Update, context: CallbackContext):
                      [
                          InlineKeyboardButton(
                              text="Help",
-                             url="http://t.me/NarutoUzumakiRobot?start=help")
+                             url="http://t.me/MissMikuNakanoBot?start=help")
                      ],                      
                      [
                          InlineKeyboardButton(
                              text="🗄 Source code",
-                             url="https://github.com/Asta6234/ZeroTwoRepo")
+                             url="https://github.com/Asta6234/Miku-Nakano")
 
                      ]]))
     else:
